@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="container todo-container">
+      <h1>Create To-Do Item</h1>
+      <form method="POST" action="/to-do/add">
+        <label for="item_name">Item Name</label>
+        <input type="text" id="item_name" name="item_name" required />
+
+        <label for="item_desc">Item Description</label>
+        <textarea id="item_desc" name="item_desc" rows="4" required></textarea>
+
+        <button type="submit">Add Item</button>
+      </form>
+    </div>
+  </body>
+</html>
