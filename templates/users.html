@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <!-- Flashed message section -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-message">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <h1>User Information Table</h1>
+    <table>
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Email ID</th>
+            <th>Mobile</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for data in result %}
+          <tr>
+            <td>{{data.fullname}}</td>
+            <td>{{data.dob}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.gender}}</td>
+          </tr>
+          {% endfor %}
+          <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+  </div>
+</body>
+</html>
