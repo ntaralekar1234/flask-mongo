@@ -50,6 +50,10 @@ def get_data():
             "data" : data
         }), 200
 
+@app.route("/to-do", methods=["GET"])
+def index():
+    return render_template('to-do.html')
+
 
 
 if __name__ == "__main__":
