@@ -42,7 +42,8 @@ label {
 input[type="text"],
 input[type="date"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"],
+form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -93,4 +94,19 @@ th {
 
 tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+/* To do Form*/
+.todo-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.todo-container label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form textarea {
+  resize: vertical;
 }
