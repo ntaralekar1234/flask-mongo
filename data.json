@@ -150,5 +150,9 @@
     {
         "name": "United States",
         "code": "US"
+    },
+    {
+        "name": "New United States",
+        "code": "New US"
     }
 ]
