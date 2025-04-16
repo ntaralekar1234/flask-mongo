@@ -54,6 +54,22 @@ def get_data():
 def index():
     return render_template('to-do.html')
 
+@app.route('/submittodoitem', methods=["POST"])
+def add():
+    try:
+        to_do_collection = db["to_do"]
+        data = request.form.to_dict()
+        to_do_collection.insert_one(data)
+        flash('Data submitted successfully')
+        return redirect(url_for('users'))
+    except Exception as e:
+        print(f"Error: {e}")  # optional: helpful for debugging
+        return jsonify({
+            "message": "Error while saving data",
+            "status":False,
+            "data" : []
+        }), 500
+
 
 
 if __name__ == "__main__":
