@@ -10,6 +10,8 @@
     <div class="container todo-container">
       <h1>Create To-Do Item</h1>
       <form method="POST" action="/to-do/add">
+        <label for="item_id">Item ID</label>
+        <input type="text" id="item_id" name="item_id" required />
         <label for="item_name">Item Name</label>
         <input type="text" id="item_name" name="item_name" required />
 
